@@ -5,5 +5,5 @@ from exercise import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('api/v1/payout/', views.payout, name='payout'),
+    path('api/v1/payout/', views.create_payout, name='payout'),
 ]
