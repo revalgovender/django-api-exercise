@@ -40,7 +40,7 @@ hours for this task.
   Payout exceeds said amount, we should split it. This amount may be regularly updated by the business team.
 - Every Payout should be linked with at least one Item, so that we know exactly what Items have been paid out with each
   transaction
-- Use Typescript/Node.JS or PHP. Using a framework such as Nest.JS or Symfony is encouraged.
+- Using a framework such as Django is encouraged.
 
 ## My Solution
 
