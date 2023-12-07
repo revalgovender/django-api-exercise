@@ -20,7 +20,6 @@ Item
 
 Payout
 
-- Payout
 - Seller reference
 - Amount
 - Currency
