@@ -1,5 +1,7 @@
 from typing import List
 
+from decimal import Decimal
+
 from exercise.models import Seller
 
 
@@ -18,8 +20,8 @@ class SoldItems:
             # Prepare data
             seller_reference = sold_item['seller-reference']
             currency = sold_item['price-currency']
-            amount = float(sold_item['price-amount'])
-            item_id = int(sold_item['item-id'])
+            amount = sold_item['price-amount']
+            item_id = sold_item['item-id']
             group_key = f'{seller_reference}-{currency}'
 
             # Add group key to list if it does not exist.

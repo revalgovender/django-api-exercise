@@ -53,24 +53,24 @@ Endpoint = http://127.0.0.1:8000/api/v1/payout
 
 ```json
 [
-  {
-    "item-id": "1",
-    "price-amount": "999999.00",
-    "price-currency": "GBP",
-    "seller-reference": "1"
-  },
-  {
-    "item-id": "2",
-    "price-amount": "500.00",
-    "price-currency": "GBP",
-    "seller-reference": "1"
-  },
-  {
-    "item-id": "2",
-    "price-amount": "500.00",
-    "price-currency": "ds",
-    "seller-reference": "1"
-  }
+    {
+        "item-id": 1,
+        "price-amount": 2900,
+        "price-currency": "GBP",
+        "seller-reference": 1
+    },
+    {
+        "item-id": 2,
+        "price-amount": 50000,
+        "price-currency": "GBP",
+        "seller-reference": 1
+    },
+    {
+        "item-id": 3,
+        "price-amount": 12000,
+        "price-currency": "GBP",
+        "seller-reference": 1
+    }
 ]
 ```
 

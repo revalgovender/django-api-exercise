@@ -8,7 +8,7 @@ class Seller(models.Model):
 class Item(models.Model):
     name = models.CharField(max_length=100)
     currency = models.CharField(max_length=3)
-    amount = models.DecimalField(max_digits=10, decimal_places=2)
+    amount = models.IntegerField()
     seller = models.ForeignKey(Seller, on_delete=models.CASCADE, related_name='items', null=True, blank=True)
 
 
