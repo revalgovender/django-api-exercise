@@ -1,3 +1,4 @@
+import math
 from typing import List
 
 from decimal import Decimal
@@ -7,7 +8,7 @@ from exercise.models import Seller
 
 class SoldItems:
 
-    def convert_to_payouts(self, sold_items: List[dict]) -> List[dict]:
+    def convert_to_payouts(self, sold_items: List[dict]) -> dict:
         payouts = {}
         group_keys = []
 
@@ -41,7 +42,28 @@ class SoldItems:
                     'items': [item_id]
                 }
 
-        return payouts
+        # Split payout if amount exceeds limit.
+        if group_keys:
+            for group_key in group_keys:
+                total_amount = payouts[group_key]['amount']
+                if total_amount > 60000:
+                    # Split payout.
+                    numberOfPayoutsToCreate = math.ceil(total_amount / 60000)
+                    amountPerPayout = total_amount / numberOfPayoutsToCreate
+                    amountPerPayout = Decimal(amountPerPayout).quantize(Decimal('.01'))
+
+                    for number in range(1, numberOfPayoutsToCreate + 1):
+                        payouts[f"{group_key}-{number}"] = {
+                            'seller_reference': payouts[group_key]['seller_reference'],
+                            'amount': amountPerPayout,
+                            'currency': payouts[group_key]['currency'],
+                            'items': payouts[group_key]['items']
+                        }
+
+                    # Unset original payout.
+                    del payouts[group_key]
+
+            return payouts
 
     def is_valid(self, sold_item: dict) -> bool:
         # Check if all required fields are present.
