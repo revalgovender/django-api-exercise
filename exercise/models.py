@@ -13,8 +13,7 @@ class Item(models.Model):
 
 
 class Payout(models.Model):
-    seller = models.ForeignKey(Seller, on_delete=models.CASCADE, related_name='payouts')
+    seller_reference = models.ForeignKey(Seller, on_delete=models.CASCADE, related_name='payouts')
     items = models.ManyToManyField(Item, related_name='payouts', blank=True)
-    seller_reference = models.CharField(max_length=50)
     amount = models.DecimalField(max_digits=10, decimal_places=2)
     currency = models.CharField(max_length=3)
