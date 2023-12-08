@@ -1,0 +1,23 @@
+[
+  {
+    "model": "exercise.seller",
+    "pk": 1,
+    "fields": {
+      "name": "Chris Turk"
+    }
+  },
+  {
+    "model": "exercise.seller",
+    "pk": 2,
+    "fields": {
+      "name": "John Dorian"
+    }
+  },
+  {
+    "model": "exercise.seller",
+    "pk": 3,
+    "fields": {
+      "name": "Elliot Reid"
+    }
+  }
+]

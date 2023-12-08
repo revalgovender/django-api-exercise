@@ -5,6 +5,7 @@
 1. [Task Description](#task-description)
 2. [My solution](#my-solution)
 3. [Future Improvements](#future-improvements)
+4. [Installation](#installation)
 
 ## Task Description
 
@@ -89,3 +90,12 @@ Endpoint = http://127.0.0.1:8000/api/v1/payout
 ## Future Improvements
 
 - TODO
+
+## Installation
+
+1. Clone the repo
+2. Create a virtual environment
+3. Install requirements
+4. Run migrations
+5. Run fixtures (seed data)
+6. Run server

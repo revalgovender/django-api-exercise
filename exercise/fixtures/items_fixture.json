@@ -1,0 +1,92 @@
+[
+  {
+    "model": "exercise.item",
+    "pk": 1,
+    "fields": {
+      "name": "Item 1",
+      "currency": "USD",
+      "amount": 10.00,
+      "seller": 1
+    }
+  },
+  {
+    "model": "exercise.item",
+    "pk": 2,
+    "fields": {
+      "name": "Item 2",
+      "currency": "USD",
+      "amount": 15.00,
+      "seller": 1
+    }
+  },
+  {
+    "model": "exercise.item",
+    "pk": 3,
+    "fields": {
+      "name": "Item 3",
+      "currency": "USD",
+      "amount": 20.00,
+      "seller": 1
+    }
+  },
+  {
+    "model": "exercise.item",
+    "pk": 4,
+    "fields": {
+      "name": "Item 4",
+      "currency": "USD",
+      "amount": 8.00,
+      "seller": 2
+    }
+  },
+  {
+    "model": "exercise.item",
+    "pk": 5,
+    "fields": {
+      "name": "Item 5",
+      "currency": "USD",
+      "amount": 12.00,
+      "seller": 2
+    }
+  },
+  {
+    "model": "exercise.item",
+    "pk": 6,
+    "fields": {
+      "name": "Item 6",
+      "currency": "USD",
+      "amount": 18.00,
+      "seller": 2
+    }
+  },
+  {
+    "model": "exercise.item",
+    "pk": 7,
+    "fields": {
+      "name": "Item 7",
+      "currency": "USD",
+      "amount": 5.00,
+      "seller": 3
+    }
+  },
+  {
+    "model": "exercise.item",
+    "pk": 8,
+    "fields": {
+      "name": "Item 8",
+      "currency": "USD",
+      "amount": 22.00,
+      "seller": 3
+    }
+  },
+  {
+    "model": "exercise.item",
+    "pk": 9,
+    "fields": {
+      "name": "Item 9",
+      "currency": "USD",
+      "amount": 16.00,
+      "seller": 3
+    }
+  }
+]
