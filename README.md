@@ -53,30 +53,30 @@ Endpoint = http://127.0.0.1:8000/api/v1/payout
 
 ```json
 [
-    {
-        "item-id": 1,
-        "price-amount": 2900,
-        "price-currency": "GBP",
-        "seller-reference": 1
-    },
-    {
-        "item-id": 2,
-        "price-amount": 50000,
-        "price-currency": "GBP",
-        "seller-reference": 1
-    },
-    {
-        "item-id": 3,
-        "price-amount": 12000,
-        "price-currency": "GBP",
-        "seller-reference": 1
-    },
-    {
-        "item-id": 4,
-        "price-amount": 15000,
-        "price-currency": "USD",
-        "seller-reference": 1
-    }
+  {
+    "item-id": 1,
+    "price-amount": 2900,
+    "price-currency": "GBP",
+    "seller-reference": 1
+  },
+  {
+    "item-id": 2,
+    "price-amount": 50000,
+    "price-currency": "GBP",
+    "seller-reference": 1
+  },
+  {
+    "item-id": 3,
+    "price-amount": 12000,
+    "price-currency": "GBP",
+    "seller-reference": 1
+  },
+  {
+    "item-id": 4,
+    "price-amount": 15000,
+    "price-currency": "USD",
+    "seller-reference": 1
+  }
 ]
 ```
 
@@ -84,39 +84,45 @@ Endpoint = http://127.0.0.1:8000/api/v1/payout
 
 ```json
 {
-    "status": "success",
-    "message": "Payouts created successfully for valid solid items",
-    "data": {
-        "1-USD": {
-            "seller_reference": 1,
-            "currency": "USD",
-            "amount": 15000
-        },
-        "1-GBP-1": {
-            "seller_reference": 1,
-            "amount": 32450.0,
-            "currency": "GBP"
-        },
-        "1-GBP-2": {
-            "seller_reference": 1,
-            "amount": 32450.0,
-            "currency": "GBP"
-        }
+  "status": "success",
+  "message": "Payouts created successfully for valid solid items",
+  "data": {
+    "1-USD": {
+      "seller_reference": 1,
+      "currency": "USD",
+      "amount": 15000
+    },
+    "1-GBP-1": {
+      "seller_reference": 1,
+      "amount": 32450.0,
+      "currency": "GBP"
+    },
+    "1-GBP-2": {
+      "seller_reference": 1,
+      "amount": 32450.0,
+      "currency": "GBP"
     }
+  }
 }
 ```
 
 ### Tests
 
+- Unit tests can be found in `exercise/tests/unit/`
+- API Functional tests can be found in `exercise/tests/api_functional/`
+- All tests pass
+
 ```bash
-$ python manage.py test exercise/tests/unit                         
-Found 3 test(s).
+$ python manage.py test exercise/tests                              
+Found 5 test(s).
+Creating test database for alias 'default'...
 System check identified no issues (0 silenced).
-...                                                                   
+.....                                                                 
 ----------------------------------------------------------------------
-Ran 3 tests in 0.001s                                                 
+Ran 5 tests in 0.006s                                                 
                                                                       
-OK   
+OK                                                                    
+Destroying test database for alias 'default'...    
 ```
 
 ## Future Improvements
