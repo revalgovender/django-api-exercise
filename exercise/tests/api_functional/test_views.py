@@ -5,25 +5,26 @@ from rest_framework.test import APITestCase
 class PayoutAPITest(APITestCase):
 
     def test_it_will_create_payout_for_sellers(self):
+        """Test behaviour of `POST /api/v1/payout/` endpoint."""
         # Arrange
         payload = [
             {
-                "item-id": "1",
-                "price-amount": "999999.00",
+                "item-id": 1,
+                "price-amount": 99999900,
                 "price-currency": "GBP",
-                "seller-reference": "1"
+                "seller-reference": 1
             },
             {
-                "item-id": "2",
-                "price-amount": "500.00",
+                "item-id": 2,
+                "price-amount": 50000,
                 "price-currency": "GBP",
-                "seller-reference": "1"
+                "seller-reference": 1
             },
             {
-                "item-id": "3",
-                "price-amount": "500.00",
+                "item-id": 3,
+                "price-amount": 500.00,
                 "price-currency": "GBP",
-                "seller-reference": "1"
+                "seller-reference": 1
             }
         ]
         expected_response = {
@@ -39,6 +40,7 @@ class PayoutAPITest(APITestCase):
         self.assertEqual(response.data, expected_response)
 
     def test_it_will_return_400_when_body_of_request_is_empty(self):
+        """Test behaviour of `POST /api/v1/payout/` endpoint."""
         # Arrange
         payload = []
         expected_response = {
