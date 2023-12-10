@@ -39,8 +39,6 @@ hours for this task.
   per seller as possible.
 - Every Payout amount should not exceed a certain limit (we can’t send a million with one single transaction); if a
   Payout exceeds said amount, we should split it. This amount may be regularly updated by the business team.
-- Every Payout should be linked with at least one Item, so that we know exactly what Items have been paid out with each
-  transaction
 - Using a framework such as Django is encouraged.
 
 ## My Solution
@@ -130,7 +128,6 @@ Destroying test database for alias 'default'...
 - Saving of multiple records can be done in one query to support large amounts of data
 - `SoldItems.convertToPayouts()`, breaks SRP, should be refactored to make it easier to read/modify
 - More tests required for functionality, edge cases and load
-- Seeders could have been created for initial database seeding instead of queries.
 
 ## Installation
 

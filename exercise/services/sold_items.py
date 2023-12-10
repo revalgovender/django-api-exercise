@@ -71,18 +71,7 @@ class SoldItems:
             return False
 
         # Only allow specific currencies.
-        # Check if currency is not in enum.
         if sold_item.get('price-currency') not in [currency.name for currency in Currency]:
             return False
-
-
-
-        # allowed_currencies = Currency.objects.values_list('code', flat=True)
-        # if sold_item.get('price-currency') not in Currency:
-        #     return False
-
-        # Check if seller exists.
-        # if not Seller.objects.filter(id=sold_item['seller-reference']).exists():
-        #     return False
 
         return True
