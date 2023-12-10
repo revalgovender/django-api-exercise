@@ -55,12 +55,10 @@ Endpoint = http://127.0.0.1:8000/api/v1/payout
 [
     {
         "item-id": 1,
-        "price-amount": 2900,
         "price-currency": "GBP",
         "seller-reference": 1
     },
     {
-        "item-id": 2,
         "price-amount": 50000,
         "price-currency": "GBP",
         "seller-reference": 1
@@ -68,8 +66,12 @@ Endpoint = http://127.0.0.1:8000/api/v1/payout
     {
         "item-id": 3,
         "price-amount": 12000,
-        "price-currency": "GBP",
         "seller-reference": 1
+    },
+    {
+        "item-id": 4,
+        "price-amount": 15000,
+        "price-currency": "USD"
     }
 ]
 ```
@@ -85,11 +87,23 @@ Endpoint = http://127.0.0.1:8000/api/v1/payout
 
 ### Tests
 
-- TODO
+```bash
+$ python manage.py test exercise/tests/unit                         
+Found 3 test(s).
+System check identified no issues (0 silenced).
+...                                                                   
+----------------------------------------------------------------------
+Ran 3 tests in 0.001s                                                 
+                                                                      
+OK   
+```
 
 ## Future Improvements
 
-- TODO
+- Saving of multiple records can be done in one query to support large amounts of data
+- `SoldItems.convertToPayouts()`, breaks SRP, should be refactored to make it easier to read/modify
+- More tests required for functionality, edge cases and load
+- Seeders could have been created for initial database seeding instead of queries.
 
 ## Installation
 

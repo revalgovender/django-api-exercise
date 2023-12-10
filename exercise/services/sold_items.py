@@ -5,6 +5,8 @@ from decimal import Decimal
 
 class SoldItems:
 
+    payout_amount_limit = 100000000
+
     def convert_to_payouts(self, sold_items: List[dict]) -> dict:
         payouts = {}
         group_keys = []
@@ -40,9 +42,9 @@ class SoldItems:
         if group_keys:
             for group_key in group_keys:
                 total_amount = payouts[group_key]['amount']
-                if total_amount > 60000:
+                if total_amount > self.payout_amount_limit:
                     # Split payout.
-                    numberOfPayoutsToCreate = math.ceil(total_amount / 60000)
+                    numberOfPayoutsToCreate = math.ceil(total_amount / self.payout_amount_limit)
                     amountPerPayout = total_amount / numberOfPayoutsToCreate
                     amountPerPayout = Decimal(amountPerPayout).quantize(Decimal('.01'))
 
