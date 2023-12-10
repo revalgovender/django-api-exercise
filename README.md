@@ -125,7 +125,9 @@ Destroying test database for alias 'default'...
 
 ## Future Improvements
 
-- Saving of multiple records can be done in one query to support large amounts of data
+- Saving payouts to the database
+- Handling items per payout
+- Error handling
 - `SoldItems.convertToPayouts()`, breaks SRP, should be refactored to make it easier to read/modify
 - More tests required for functionality, edge cases and load
 
