@@ -55,10 +55,12 @@ Endpoint = http://127.0.0.1:8000/api/v1/payout
 [
     {
         "item-id": 1,
+        "price-amount": 2900,
         "price-currency": "GBP",
         "seller-reference": 1
     },
     {
+        "item-id": 2,
         "price-amount": 50000,
         "price-currency": "GBP",
         "seller-reference": 1
@@ -66,12 +68,14 @@ Endpoint = http://127.0.0.1:8000/api/v1/payout
     {
         "item-id": 3,
         "price-amount": 12000,
+        "price-currency": "GBP",
         "seller-reference": 1
     },
     {
         "item-id": 4,
         "price-amount": 15000,
-        "price-currency": "USD"
+        "price-currency": "USD",
+        "seller-reference": 1
     }
 ]
 ```
@@ -80,8 +84,25 @@ Endpoint = http://127.0.0.1:8000/api/v1/payout
 
 ```json
 {
-  "status": "success",
-  "message": "Payouts were created successfully for valid sold items"
+    "status": "success",
+    "message": "Payouts created successfully for valid solid items",
+    "data": {
+        "1-USD": {
+            "seller_reference": 1,
+            "currency": "USD",
+            "amount": 15000
+        },
+        "1-GBP-1": {
+            "seller_reference": 1,
+            "amount": 32450.0,
+            "currency": "GBP"
+        },
+        "1-GBP-2": {
+            "seller_reference": 1,
+            "amount": 32450.0,
+            "currency": "GBP"
+        }
+    }
 }
 ```
 

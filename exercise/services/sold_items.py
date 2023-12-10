@@ -2,10 +2,12 @@ import math
 from typing import List
 from decimal import Decimal
 
+from exercise.services.types.currency import Currency
+
 
 class SoldItems:
 
-    payout_amount_limit = 100000000
+    PAYOUT_AMOUNT_LIMIT = 60000
 
     def convert_to_payouts(self, sold_items: List[dict]) -> dict:
         payouts = {}
@@ -42,9 +44,9 @@ class SoldItems:
         if group_keys:
             for group_key in group_keys:
                 total_amount = payouts[group_key]['amount']
-                if total_amount > self.payout_amount_limit:
+                if total_amount > self.PAYOUT_AMOUNT_LIMIT:
                     # Split payout.
-                    numberOfPayoutsToCreate = math.ceil(total_amount / self.payout_amount_limit)
+                    numberOfPayoutsToCreate = math.ceil(total_amount / self.PAYOUT_AMOUNT_LIMIT)
                     amountPerPayout = total_amount / numberOfPayoutsToCreate
                     amountPerPayout = Decimal(amountPerPayout).quantize(Decimal('.01'))
 
@@ -69,9 +71,15 @@ class SoldItems:
             return False
 
         # Only allow specific currencies.
-        allowed_currencies = ['EUR', 'USD', 'GBP']
-        if sold_item.get('price-currency') not in allowed_currencies:
+        # Check if currency is not in enum.
+        if sold_item.get('price-currency') not in [currency.name for currency in Currency]:
             return False
+
+
+
+        # allowed_currencies = Currency.objects.values_list('code', flat=True)
+        # if sold_item.get('price-currency') not in Currency:
+        #     return False
 
         # Check if seller exists.
         # if not Seller.objects.filter(id=sold_item['seller-reference']).exists():

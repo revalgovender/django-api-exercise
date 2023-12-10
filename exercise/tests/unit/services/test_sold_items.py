@@ -36,7 +36,7 @@ class TestSoldItems(TestCase):
                 "price-amount": 15000,
                 "price-currency": "USD",
                 "seller-reference": 1
-            },
+            }
         ]
         expected = {
             "1-USD": {
